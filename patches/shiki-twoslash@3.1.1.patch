@@ -1,0 +1,13 @@
+diff --git a/dist/shiki-twoslash.esm.js b/dist/shiki-twoslash.esm.js
+index e021c812913b7abbcbeb4fe9ada37e030fe7d2bd..f5ae6744a7260051597d1463b7dd33177a73cc8d 100644
+--- a/dist/shiki-twoslash.esm.js
++++ b/dist/shiki-twoslash.esm.js
+@@ -442,7 +442,7 @@ function twoslashRenderer(lines, options, twoslash, meta) {
+                   var _query$completionsPre, _c$kindModifiers;
+ 
+                   var after = c.name.substr(((_query$completionsPre = query.completionsPrefix) == null ? void 0 : _query$completionsPre.length) || 0);
+-                  var name = "<span><span class='result-found'>" + (query.completionsPrefix || "") + "</span>" + after + "<span>";
++                  var name = "<span><span class='result-found'>" + (query.completionsPrefix || "") + "</span>" + after + "</span>";
+                   var isDeprecated = (_c$kindModifiers = c.kindModifiers) == null ? void 0 : _c$kindModifiers.split(",").includes("deprecated");
+                   var liClass = isDeprecated ? "deprecated" : "";
+                   return "<li class='" + liClass + "'>" + name + "</li>";

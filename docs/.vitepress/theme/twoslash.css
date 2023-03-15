@@ -1,0 +1,338 @@
+/*  Start of Shiki Twoslash CSS:
+
+Code blocks structurally look like: 
+
+<pre class='shiki lsp twoslash [theme-name]'>
+  <div class='language-id'>[lang-id]</div>
+    <div class='code-container'>
+      <code>[the code as a series of spans]</code>
+      <a href='playground...'>Try</a> (optional)
+    </div>
+  </pre> 
+*/
+
+/* theme vars */
+:root:not(.dark) {
+  --vp-code-block-bg: rgba(125,125,125,0.04);
+  --vp-code-line-highlight-color: rgba(125,125,125,0.04);
+
+  /* fix contrast: lang name on gray code block */
+  --vp-c-text-dark-3: rgba(180, 180, 180, 0.7);
+}
+:root.dark {
+  --vp-code-block-bg: rgba(0,0,0,0.2);
+
+  /* fix lang name: check the same above (this is the default) */
+  --vp-c-text-dark-3: rgba(235, 235, 235, 0.38);
+}
+
+/* Hide block based on theme */
+html:not(.dark) pre.shiki.vitesse-dark {
+  display: none;
+}
+html:not(.dark) pre.shiki.vitesse-light {
+  display: block;
+}
+html.dark pre.shiki.vitesse-dark {
+    display: block;
+}
+html.dark pre.shiki.vitesse-light {
+  display: none;
+}
+
+/* Disable inline styles */
+pre.shiki.twoslash {
+  background-color: unset !important;
+  color: unset !important;
+}
+pre.shiki.twoslash code {
+  background-color: unset !important;
+  color: unset !important;
+}
+
+/* Allow lsp popovers to overflow container on desktop */
+@media (min-width: 640px) {
+  .vp-doc div[class*="language-"] {
+    overflow: visible;
+  }
+  pre.shiki.twoslash {
+    overflow: visible;
+  }
+}
+
+/* Don't show the language identifiers */
+pre.shiki .language-id {
+  display: none;
+}
+
+/* In order to have the 'popped out' style design and to not break the layout
+/* we need to place a fake and un-selectable copy of the error which _isn't_ broken out
+/* behind the actual error message.
+
+/* This sections keeps both of those two in in sync  */
+pre .error, pre .error-behind {
+  display: block;
+  margin-bottom: 4px;
+  margin-left: -24px;
+  margin-top: 8px;
+  padding: 6px;
+  padding-left: 24px;
+  white-space: pre-wrap;
+  width: 100%;
+}
+pre .error {
+  position: absolute;
+  background-color: var(--vp-c-red-dimm-1);
+  /* Give the space to the error code */
+  display: flex;
+  align-items: center;
+  color: var(--vp-c-text-1);
+}
+pre .error .code {
+  display: none;
+}
+pre .error-behind {
+  user-select: none;
+  visibility: transparent;
+  color: transparent;
+}
+
+/* Queries */
+pre .arrow {
+  /* Transparent background */
+  background-color: var(--vp-c-mute-dark);
+  position: relative;
+  top: -6px;
+  margin-left: 0.1rem;
+  /* Edges */
+  border-left: 1px solid var(--vp-c-mute-dark);
+  border-top: 1px solid var(--vp-c-mute-dark);
+  transform: translateY(25%) rotate(45deg);
+  /* Size */
+  height: 8px;
+  width: 8px;
+}
+pre .popover {
+  color: var(--vp-c-text-1);
+  margin-bottom: 10px;
+  background-color: var(--vp-c-mute-dark);
+  display: inline-block;
+  padding: 0 0.5rem 0.3rem;
+  margin-top: 8px;
+  border-radius: 3px;
+}
+
+/** When you mouse over the pre, show the underlines */
+pre.twoslash:hover data-lsp {
+  border-color: #747474;
+}
+
+/** The tooltip-like which provides the LSP response */
+pre.twoslash data-lsp:hover::before {
+  content: attr(lsp);
+  position: absolute;
+  transform: translate(0, 1.25rem);
+
+  background-color: var(--vp-c-mute-dark);
+  color: var(--vp-c-text-1);
+  text-align: left;
+  padding: 5px 8px;
+  border-radius: 2px;
+  font-size: 14px;
+  white-space: pre-wrap;
+  z-index: 100;
+}
+data-lsp {
+  /* Ensures there's no 1px jump when the hover happens */
+  border-bottom: 1px dotted transparent;
+  /* Fades in unobtrusively */
+  transition-timing-function: ease;
+  transition: border-color 0.3s;
+}
+/* Respect people's wishes to not have animations */
+ @media (prefers-reduced-motion: reduce) {
+	data-lsp {
+		 transition: none;
+	}
+}
+
+/* Error underline */
+pre data-err {
+  /* Extracted from VS Code */
+  background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23c94824'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left;
+  padding-bottom: 3px;
+}
+
+/* Try button */
+pre .code-container > a {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  border-radius: 2px;
+  background-image: url("data:image/svg+xml,%3Csvg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3ETypeScript%3C/title%3E%3Cpath fill='%233078c6' d='M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z'/%3E%3C/svg%3E");
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  color: transparent;
+  text-decoration: none;
+  opacity: 0;
+  transition-timing-function: ease;
+  transition: opacity 0.3s;
+}
+pre .code-container > a:hover {
+  color: transparent;
+}
+/* Respect no animations */
+@media (prefers-reduced-motion: reduce) {
+	 pre .code-container > a {
+		 transition: none;
+	}
+}
+pre .code-container:hover a {
+  opacity: 1;
+}
+
+/* Completion */
+pre .inline-completions ul.dropdown {
+  display: inline-block;
+  position: absolute;
+  width: 240px;
+  background-color: var(--vp-c-mute-dark);
+  color: var(--vp-c-text-2);
+  padding-top: 4px;
+  font-family: var(--code-font);
+  margin: 0;
+  padding: 0;
+  border-left: 4px solid var(--vp-c-mute-dark);
+}
+pre .inline-completions ul.dropdown::before {
+  background-color: var(--vp-c-text-1);
+  width: 2px;
+  position: absolute;
+  top: -1.2rem;
+  left: -3px;
+  height: 17px;
+  content: " ";
+}
+pre .inline-completions ul.dropdown li {
+  overflow-x: hidden;
+  padding-left: 4px;
+  margin-bottom: 4px;
+}
+pre .inline-completions ul.dropdown li.deprecated {
+  text-decoration: line-through;
+}
+pre .inline-completions ul.dropdown li span.result-found {
+  color: var(--vp-c-text-1);
+  font-weight: bold;
+}
+pre .inline-completions ul.dropdown li span.result {
+  width: 100px;
+  color: var(--vp-c-text-2);
+  display: inline-block;
+}
+
+/** Support for showing console log/warn/errors inline */
+pre code[class*="language-"] {
+  all: unset !important;
+}
+pre code[class*="language-"] pre {
+  padding: 0 !important;
+}
+pre .logger {
+	display: flex;
+	align-items: center;
+	color: black;
+	padding: 6px;
+	padding-left: 8px;
+	width: calc(100% - 19px);
+	white-space: pre-wrap;
+}
+pre .logger svg {
+	margin-right: 9px;
+}
+pre .logger.error-log {
+	background-color: #fee;
+	border-left: 2px solid #bf1818;
+}
+pre .logger.warn-log {
+	background-color: #ffe;
+	border-left: 2px solid #eae662;
+}
+pre .logger.log-log {
+	background-color: #e9e9e9;
+	border-left: 2px solid #ababab;
+}
+pre .logger.log-log svg {
+	margin-left: 6px;
+	margin-right: 9px;
+}
+
+/* Other */
+
+pre.shiki:hover .dim {
+  opacity: 1;
+}
+pre.shiki div.dim {
+  opacity: 0.5;
+}
+pre.shiki div.dim, pre.shiki div.highlight {
+  margin: 0;
+  padding: 0;
+}
+pre.shiki div.highlight {
+  opacity: 1;
+  background-color: var(--vp-c-mute-light);
+}
+pre.shiki div.line {
+  min-height: 1rem;
+}
+pre.shiki span.line.highlighted {
+  background-color: var(--vp-code-line-highlight-color);
+}
+
+pre code {
+  -webkit-overflow-scrolling: touch;
+}
+pre code a {
+	text-decoration: none;
+}
+
+pre .query {
+  margin-bottom: 10px;
+  color: #137998;
+  display: inline-block;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/** Annotations support, providing a tool for meta commentary */
+.tag-container {
+	position: relative;
+}
+.tag-container .twoslash-annotation {
+	position: absolute;
+	font-family: "JetBrains Mono", Menlo, Monaco, Consolas, Courier New, monospace;
+	right: -10px;
+   /** Default annotation text to 200px */
+	width: 200px;
+	color: #187abf;
+	background-color: #fcf3d9 bb;
+}
+.tag-container .twoslash-annotation p {
+	text-align: left;
+	font-size: 0.8rem;
+	line-height: 0.9rem;
+}
+.tag-container .twoslash-annotation svg {
+	float: left;
+	margin-left: -44px;
+}
+.tag-container .twoslash-annotation.left {
+	right: auto;
+	left: -200px;
+}
+.tag-container .twoslash-annotation.left svg {
+	float: right;
+	margin-right: -5px;
+}
