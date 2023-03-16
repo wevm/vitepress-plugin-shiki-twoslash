@@ -3,6 +3,15 @@ title: 'twoslash'
 titleTemplate: false
 ---
 
+- Works with `vitepress@>=1.0.0-alpha.61`
+- Does not support other VitePress Shiki features yet
+  - Line highlighting in code blocks
+  - Focus in code blocks
+  - Colored diffs in code blocks
+  - Errors and warnings in code blocks
+  - Line numbers
+  - Import code snippets
+
 ## Plain
 
 ```ts
@@ -102,6 +111,10 @@ const words = welcome.contains(' ')
 ```ts twoslash
 console.error('Hello world')
 // @error: Hello world
+console.warn('Hello world')
+// @warn: Hello world
+console.log('Hello world')
+// @log: Hello world
 ```
 
 ## Annotations
