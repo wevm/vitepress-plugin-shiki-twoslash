@@ -3,6 +3,8 @@ title: 'twoslash'
 titleTemplate: false
 ---
 
+- https://github.com/shikijs/twoslash
+- https://shikijs.github.io/twoslash
 - Works with `vitepress@>=1.0.0-alpha.61`
 - Does not support other VitePress Shiki features yet
   - Line highlighting in code blocks

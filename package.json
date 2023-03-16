@@ -1,11 +1,11 @@
 {
   "name": "vitepress-plugin-twoslash",
-  "description": "Strict TypeScript types for Ethereum ABIs",
+  "description": "VitePress plugin for twoslash",
   "license": "MIT",
-  "version": "0.7.1",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wagmi-dev/abitype.git"
+    "url": "https://github.com/wagmi-dev/vitepress-plugin-twoslash.git"
   },
   "author": "awkweb.eth",
   "ethereum": "wagmi-dev.eth",
@@ -31,13 +31,7 @@
     "/dist"
   ],
   "peerDependencies": {
-    "typescript": ">=4.9.4",
-    "zod": "^3 >=3.19.1"
-  },
-  "peerDependenciesMeta": {
-    "zod": {
-      "optional": true
-    }
+    "vitepress": "*"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
@@ -48,7 +42,6 @@
     "@types/prettier": "^2.7.2",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
-    "@vitest/coverage-c8": "^0.24.3",
     "bun": "^0.5.7",
     "eslint": "8.17.0",
     "eslint-config-prettier": "^8.6.0",
@@ -61,23 +54,17 @@
     "prettier": "^2.8.1",
     "simple-git-hooks": "^2.8.1",
     "tsup": "^6.6.3",
-    "typescript": "^4.9.4",
-    "vitest": "^0.26.3",
-    "zod": "^3.20.6"
+    "typescript": "^4.9.4"
   },
   "keywords": [
-    "abi",
-    "eth",
-    "ethereum",
-    "typescript",
-    "web3"
+    "vitepress",
+    "shiki",
+    "twoslash"
   ],
   "scripts": {
-    "bench": "vitest bench --no-threads",
     "build": "tsup",
     "changeset:release": "pnpm build && changeset publish",
     "changeset:version": "changeset version && pnpm install --lockfile-only",
-    "clean": "rm -rf config dist node_modules test trace zod **/node_modules",
     "dev": "DEV=true tsup",
     "docs:dev": "pnpm -r --filter docs dev",
     "docs:build": "pnpm -r --filter docs build",
@@ -88,10 +75,6 @@
     "postinstall": "pnpm dev",
     "prepare": "npx simple-git-hooks",
     "prepublishOnly": "pnpm bun scripts/prepublishOnly.ts",
-    "test": "vitest",
-    "test:cov": "vitest run --coverage",
-    "test:typecheck": "vitest typecheck",
-    "test:update": "vitest --update",
     "typecheck": "tsc --noEmit"
   },
   "simple-git-hooks": {
