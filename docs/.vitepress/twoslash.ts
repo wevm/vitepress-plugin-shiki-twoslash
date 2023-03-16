@@ -10,7 +10,7 @@ export const markdownItShikiTwoslashSetup = async (
   return (md, options) => {
     const h = md.options.highlight
     md.options.highlight = (code, lang, attrs) => {
-      if (attrs === 'twoslash')
+      if (/twoslash/.test(attrs))
         return transformAttributesToHTML(
           code.replace(/\r?\n$/, ''), // strip trailing newline fed during code block parsing
           [lang, attrs].join(' '),

@@ -82,7 +82,7 @@ pre .error, pre .error-behind {
 }
 pre .error {
   position: absolute;
-  background-color: var(--vp-c-red-dimm-1);
+  background-color: var(--vp-c-red-dimm-2);
   /* Give the space to the error code */
   display: flex;
   align-items: center;
@@ -124,7 +124,7 @@ pre .popover {
 
 /** When you mouse over the pre, show the underlines */
 pre.twoslash:hover data-lsp {
-  border-color: #747474;
+  border-color: var(--vp-c-text-2);
 }
 
 /** The tooltip-like which provides the LSP response */
@@ -242,30 +242,58 @@ pre code[class*="language-"] pre {
 pre .logger {
 	display: flex;
 	align-items: center;
-	color: black;
+  color: var(--vp-c-text-1);
 	padding: 6px;
 	padding-left: 8px;
-	width: calc(100% - 19px);
+	width: 100%;
 	white-space: pre-wrap;
 }
 pre .logger svg {
 	margin-right: 9px;
 }
 pre .logger.error-log {
-	background-color: #fee;
-	border-left: 2px solid #bf1818;
+	background-color: var(--vp-custom-block-danger-bg);
 }
 pre .logger.warn-log {
-	background-color: #ffe;
-	border-left: 2px solid #eae662;
+	background-color: var(--vp-custom-block-warning-bg);
 }
 pre .logger.log-log {
-	background-color: #e9e9e9;
-	border-left: 2px solid #ababab;
+	background-color: var(--vp-custom-block-info-bg);
 }
 pre .logger.log-log svg {
 	margin-left: 6px;
 	margin-right: 9px;
+}
+
+/** Annotations support, providing a tool for meta commentary */
+.tag-container {
+	position: relative;
+}
+.tag-container .twoslash-annotation {
+	position: absolute;
+	font-family: "JetBrains Mono", Menlo, Monaco, Consolas, Courier New, monospace;
+	right: -10px;
+   /** Default annotation text to 200px */
+	width: 200px;
+	color: #187abf;
+	background-color: #fcf3d9 bb;
+}
+.tag-container .twoslash-annotation p {
+	text-align: left;
+	font-size: 0.8rem;
+	line-height: 0.9rem;
+}
+.tag-container .twoslash-annotation svg {
+	float: left;
+	margin-left: -44px;
+}
+.tag-container .twoslash-annotation.left {
+	right: auto;
+	left: -200px;
+}
+.tag-container .twoslash-annotation.left svg {
+	float: right;
+	margin-right: -5px;
 }
 
 /* Other */
@@ -302,37 +330,4 @@ pre .query {
   margin-bottom: 10px;
   color: #137998;
   display: inline-block;
-}
-
-/* ------------------------------------------------------------------------------------- */
-
-/** Annotations support, providing a tool for meta commentary */
-.tag-container {
-	position: relative;
-}
-.tag-container .twoslash-annotation {
-	position: absolute;
-	font-family: "JetBrains Mono", Menlo, Monaco, Consolas, Courier New, monospace;
-	right: -10px;
-   /** Default annotation text to 200px */
-	width: 200px;
-	color: #187abf;
-	background-color: #fcf3d9 bb;
-}
-.tag-container .twoslash-annotation p {
-	text-align: left;
-	font-size: 0.8rem;
-	line-height: 0.9rem;
-}
-.tag-container .twoslash-annotation svg {
-	float: left;
-	margin-left: -44px;
-}
-.tag-container .twoslash-annotation.left {
-	right: auto;
-	left: -200px;
-}
-.tag-container .twoslash-annotation.left svg {
-	float: right;
-	margin-right: -5px;
 }
