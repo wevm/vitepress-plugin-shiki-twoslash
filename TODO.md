@@ -1,3 +1,0 @@
-- package up plugin
-- single theme
-- remove vitepress patch https://github.com/vuejs/vitepress/pull/2059

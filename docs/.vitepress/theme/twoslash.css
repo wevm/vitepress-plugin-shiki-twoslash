@@ -11,35 +11,6 @@ Code blocks structurally look like:
   </pre> 
 */
 
-/* theme vars */
-:root:not(.dark) {
-  --vp-code-block-bg: rgba(125,125,125,0.04);
-  --vp-code-line-highlight-color: rgba(125,125,125,0.04);
-
-  /* fix contrast: lang name on gray code block */
-  --vp-c-text-dark-3: rgba(180, 180, 180, 0.7);
-}
-:root.dark {
-  --vp-code-block-bg: rgba(0,0,0,0.2);
-
-  /* fix lang name: check the same above (this is the default) */
-  --vp-c-text-dark-3: rgba(235, 235, 235, 0.38);
-}
-
-/* Hide block based on theme */
-html:not(.dark) pre.shiki.vitesse-dark {
-  display: none;
-}
-html:not(.dark) pre.shiki.vitesse-light {
-  display: block;
-}
-html.dark pre.shiki.vitesse-dark {
-    display: block;
-}
-html.dark pre.shiki.vitesse-light {
-  display: none;
-}
-
 /* Disable inline styles */
 pre.shiki.twoslash {
   background-color: unset !important;
@@ -293,7 +264,7 @@ pre .logger.log-log svg {
    /** Default annotation text to 200px */
 	width: 200px;
 	color: var(--vp-c-brand);
-	background-color: var(--vp-c-bg);
+  z-index: 100;
 }
 .tag-container .twoslash-annotation p {
 	text-align: left;

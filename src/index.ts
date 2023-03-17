@@ -1,1 +1,1 @@
-export const foo = 'bar'
+export { withTwoslash } from './plugin'

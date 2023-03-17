@@ -1,6 +1,6 @@
 {
   "name": "vitepress-plugin-twoslash",
-  "description": "VitePress plugin for twoslash",
+  "description": "VitePress Plugin for Twoslash",
   "license": "MIT",
   "version": "0.0.1",
   "repository": {
@@ -15,15 +15,15 @@
       "url": "https://github.com/sponsors/wagmi-dev"
     }
   ],
-  "module": "dist/index.mjs",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/vitepress-plugin-twoslash.umd.js",
+  "module": "dist/vitepress-plugin-twoslash.es.mjs",
+  "types": "dist/vitepress-plugin-twoslash.d.ts",
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "module": "./dist/index.mts",
-      "default": "./dist/index.js"
+      "types": "./dist/vitepress-plugin-twoslash.d.ts",
+      "import": "dist/vitepress-plugin-twoslash.es.mjs",
+      "require": "dist/vitepress-plugin-twoslash.umd.js"
     },
     "./package.json": "./package.json"
   },
@@ -31,7 +31,12 @@
     "/dist"
   ],
   "peerDependencies": {
-    "vitepress": "*"
+    "vitepress": ">=1.0.0-alpha.61"
+  },
+  "dependencies": {
+    "remark-shiki-twoslash": "^3.1.1",
+    "shiki": "~0.14.1",
+    "shiki-twoslash": "^3.1.1"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",
@@ -53,26 +58,28 @@
     "lint-staged": "^12.4.1",
     "prettier": "^2.8.1",
     "simple-git-hooks": "^2.8.1",
-    "tsup": "^6.6.3",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "vite": "^4.2.0",
+    "vitepress": "1.0.0-alpha.48"
   },
   "keywords": [
     "vitepress",
+    "plugin",
     "shiki",
     "twoslash"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "vite build",
     "changeset:release": "pnpm build && changeset publish",
     "changeset:version": "changeset version && pnpm install --lockfile-only",
-    "dev": "DEV=true tsup",
+    "dev": "vite build -w",
     "docs:dev": "pnpm -r --filter docs dev",
     "docs:build": "pnpm -r --filter docs build",
     "docs:serve": "pnpm -r --filter docs serve",
     "lint": "eslint . --cache",
     "lint:fix": "pnpm lint --fix",
     "lint:format": "prettier --write",
-    "postinstall": "pnpm dev",
+    "postinstall": "pnpm build",
     "prepare": "npx simple-git-hooks",
     "prepublishOnly": "pnpm bun scripts/prepublishOnly.ts",
     "typecheck": "tsc --noEmit"
