@@ -68,7 +68,7 @@
     "dev": "DEV=true tsup",
     "docs:dev": "pnpm -r --filter docs dev",
     "docs:build": "pnpm -r --filter docs build",
-    "docs:preview": "pnpm -r --filter docs preview",
+    "docs:serve": "pnpm -r --filter docs serve",
     "lint": "eslint . --cache",
     "lint:fix": "pnpm lint --fix",
     "lint:format": "prettier --write",

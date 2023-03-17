@@ -5,12 +5,12 @@ overrides:
   shiki-twoslash>shiki: ^0.14.1
 
 patchedDependencies:
+  shiki-twoslash@3.1.1:
+    hash: unhypdhntfexmzdfbjbs24i4aa
+    path: patches/shiki-twoslash@3.1.1.patch
   vitepress@1.0.0-alpha.48:
     hash: nu7rq2bnncjflbygtoyal57gza
     path: patches/vitepress@1.0.0-alpha.48.patch
-  shiki-twoslash@3.1.1:
-    hash: qvexq6fygyuwvlmqkgumatgp3i
-    path: patches/shiki-twoslash@3.1.1.patch
 
 importers:
 
@@ -74,7 +74,7 @@ importers:
       markdown-it: 13.0.1
       remark-shiki-twoslash: 3.1.1
       shiki: 0.14.1
-      shiki-twoslash: 3.1.1_qvexq6fygyuwvlmqkgumatgp3i
+      shiki-twoslash: 3.1.1_unhypdhntfexmzdfbjbs24i4aa
       vitepress: 1.0.0-alpha.48_nu7rq2bnncjflbygtoyal57gza
       vue: 3.2.47
 
@@ -3586,7 +3586,7 @@ packages:
       fenceparser: 1.1.1
       regenerator-runtime: 0.13.11
       shiki: 0.14.1
-      shiki-twoslash: 3.1.1_qvexq6fygyuwvlmqkgumatgp3i
+      shiki-twoslash: 3.1.1_unhypdhntfexmzdfbjbs24i4aa
       tslib: 2.1.0
       unist-util-visit: 2.0.3
     transitivePeerDependencies:
@@ -3726,7 +3726,7 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shiki-twoslash/3.1.1_qvexq6fygyuwvlmqkgumatgp3i:
+  /shiki-twoslash/3.1.1_unhypdhntfexmzdfbjbs24i4aa:
     resolution: {integrity: sha512-b2j/2yjEjnj0Yav7purKB7uuSbYBf/EQWmu2f7d4G96NiM+Qmr3Tb3UeHY7faN/IEaLW6ip7aQa7MpZNlU5xkQ==}
     peerDependencies:
       typescript: '>3'
