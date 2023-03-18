@@ -1,11 +1,11 @@
 {
-  "name": "vitepress-plugin-twoslash",
-  "description": "VitePress Plugin for Twoslash",
+  "name": "vitepress-plugin-shiki-twoslash",
+  "description": "VitePress Plugin for Shiki Twoslash",
   "license": "MIT",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wagmi-dev/vitepress-plugin-twoslash.git"
+    "url": "https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash.git"
   },
   "author": "awkweb.eth",
   "ethereum": "wagmi-dev.eth",
@@ -15,16 +15,17 @@
       "url": "https://github.com/sponsors/wagmi-dev"
     }
   ],
-  "main": "dist/vitepress-plugin-twoslash.umd.js",
-  "module": "dist/vitepress-plugin-twoslash.es.mjs",
-  "types": "dist/vitepress-plugin-twoslash.d.ts",
+  "main": "dist/vitepress-plugin-shiki-twoslash.umd.js",
+  "module": "dist/vitepress-plugin-shiki-twoslash.es.mjs",
+  "types": "dist/index.d.ts",
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/vitepress-plugin-twoslash.d.ts",
-      "import": "dist/vitepress-plugin-twoslash.es.mjs",
-      "require": "dist/vitepress-plugin-twoslash.umd.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/vitepress-plugin-shiki-twoslash.es.mjs",
+      "require": "./dist/vitepress-plugin-shiki-twoslash.umd.js"
     },
+    "./styles.css": "./dist/styles.css",
     "./package.json": "./package.json"
   },
   "files": [
@@ -60,6 +61,8 @@
     "simple-git-hooks": "^2.8.1",
     "typescript": "^4.9.4",
     "vite": "^4.2.0",
+    "vite-plugin-dts": "^2.1.0",
+    "vite-plugin-static-copy": "^0.13.1",
     "vitepress": "1.0.0-alpha.48"
   },
   "keywords": [

@@ -1,4 +1,4 @@
-/*  Start of Shiki Twoslash CSS:
+/* Start of Shiki Twoslash CSS:
 
 Code blocks structurally look like: 
 
@@ -102,7 +102,7 @@ pre.twoslash:hover data-lsp {
 pre.twoslash data-lsp:hover::before {
   content: attr(lsp);
   position: absolute;
-  transform: translate(0, 1.25rem);
+  transform: translate(0, 1.15rem);
 
   color: var(--vp-c-text-1);
   background-color: var(--vp-c-bg-elv);
@@ -321,3 +321,4 @@ pre .query {
   color: #137998;
   display: inline-block;
 }
+

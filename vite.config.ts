@@ -1,13 +1,9 @@
 import { defineConfig } from 'vite'
+import { default as dts } from 'vite-plugin-dts'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 import { name } from './package.json'
 import { resolve } from 'path'
-
-// d.ts
-// css
-// vitest
-// dev mode
-// docs
 
 export default defineConfig({
   build: {
@@ -24,6 +20,7 @@ export default defineConfig({
       formats: ['es', 'umd'],
       name,
     },
+    outDir: 'dist',
     rollupOptions: {
       external: ['shiki', 'vitepress'],
       output: {
@@ -34,4 +31,17 @@ export default defineConfig({
       },
     },
   },
+  plugins: [
+    // https://github.com/qmhc/vite-plugin-dts
+    dts(),
+    // https://github.com/sapphi-red/vite-plugin-static-copy
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'src/styles.css',
+          dest: './',
+        },
+      ],
+    }),
+  ],
 })

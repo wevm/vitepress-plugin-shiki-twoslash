@@ -15,16 +15,16 @@
 }
 
 /* Hide block based on theme */
-html:not(.dark) pre.shiki.vitesse-dark {
+html:not(.dark) pre.shiki[class*="dark"] {
   display: none;
 }
-html:not(.dark) pre.shiki.vitesse-light {
+html:not(.dark) pre.shiki[class*="light"] {
   display: block;
 }
-html.dark pre.shiki.vitesse-dark {
+html.dark pre.shiki[class*="dark"] {
     display: block;
 }
-html.dark pre.shiki.vitesse-light {
+html.dark pre.shiki[class*="light"] {
   display: none;
 }
 

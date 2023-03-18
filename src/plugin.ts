@@ -1,6 +1,6 @@
 import { setupForFile, transformAttributesToHTML } from 'remark-shiki-twoslash'
 import type { UserConfigSettings as TwoslashConfigSettings } from 'shiki-twoslash'
-import type { UserConfig } from 'vitepress'
+import type { DefaultTheme, UserConfig } from 'vitepress'
 
 declare module 'vitepress' {
   interface UserConfig {
@@ -8,12 +8,28 @@ declare module 'vitepress' {
   }
 }
 
-export async function withTwoslash(config: UserConfig) {
+export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
   // Inject twoslash highlighter
   if (!config.markdown) config.markdown = {}
   const markdownConfig = config.markdown.config || (() => null)
 
-  const { highlighters } = await setupForFile(config.twoslash)
+  const theme = config.markdown?.theme
+  let themes: TwoslashConfigSettings['themes'] = ['material-theme-palenight']
+  if (config.twoslash?.themes) {
+    themes = config.twoslash.themes
+  } else if (typeof theme == 'object') {
+    if ('dark' in theme && 'light' in theme) themes = [theme.dark, theme.light]
+    else themes = [theme]
+  } else if (typeof theme === 'string') {
+    themes = [theme]
+  }
+  const twoslashConfig = {
+    theme: themes[0],
+    themes,
+    ...config.twoslash,
+  }
+  const { highlighters } = await setupForFile(twoslashConfig)
+
   config.markdown.config = (md) => {
     const h = md.options.highlight
     md.options.highlight = (code, lang, attrs) => {
@@ -22,7 +38,7 @@ export async function withTwoslash(config: UserConfig) {
           code.replace(/\r?\n$/, ''), // strip trailing newline fed during code block parsing
           [lang, attrs].join(' '),
           highlighters,
-          config.twoslash ?? {},
+          twoslashConfig,
         )
 
       return h!(code, lang, attrs)
