@@ -101,19 +101,15 @@ export default withTwoslash(
                 link: '/api/multi-file',
               },
               {
-                text: 'DRY Examples 🚧',
-                link: '/api/dry',
-              },
-              {
-                text: '@types 🚧',
+                text: '@types',
                 link: '/api/types',
               },
               {
-                text: 'Meta Annotations 🚧',
+                text: 'Meta Annotations',
                 link: '/api/annotations',
               },
               {
-                text: 'Logging 🚧',
+                text: 'Logging',
                 link: '/api/logging',
               },
             ],

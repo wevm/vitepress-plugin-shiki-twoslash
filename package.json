@@ -63,7 +63,8 @@
     "vite": "^4.2.0",
     "vite-plugin-dts": "^2.1.0",
     "vite-plugin-static-copy": "^0.13.1",
-    "vitepress": "1.0.0-alpha.48"
+    "vitepress": "1.0.0-alpha.48",
+    "vitest": "^0.29.3"
   },
   "keywords": [
     "vitepress",

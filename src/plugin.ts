@@ -1,12 +1,8 @@
 import { setupForFile, transformAttributesToHTML } from 'remark-shiki-twoslash'
-import type { UserConfigSettings as TwoslashConfigSettings } from 'shiki-twoslash'
+import type { UserConfigSettings } from 'shiki-twoslash'
 import type { DefaultTheme, UserConfig } from 'vitepress'
 
-declare module 'vitepress' {
-  interface UserConfig {
-    twoslash?: TwoslashConfigSettings
-  }
-}
+export type TwoslashConfigSettings = Prettify<UserConfigSettings>
 
 export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
   // Inject twoslash highlighter
@@ -64,3 +60,8 @@ export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
 
   return config
 }
+
+type Prettify<T> = {
+  [K in keyof T]: T[K]
+  // eslint-disable-next-line @typescript-eslint/ban-types
+} & {}

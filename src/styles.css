@@ -92,6 +92,8 @@ pre .popover {
   padding: 0 0.5rem 0.3rem;
   margin-top: 8px;
   border-radius: 3px;
+  max-width: 400px;
+  white-space: pre-line;
 }
 
 /** When you mouse over the pre, show the underlines */

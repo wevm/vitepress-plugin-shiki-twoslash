@@ -6,9 +6,11 @@ titleTemplate: false
 
 # VitePress Twoslash
 
+Static code examples for [VitePress](https://vitepress.dev) using [Shiki Twoslash](https://github.com/shikijs/twoslash) — powered by the syntax engine of Visual Studio Code and the TypeScript compiler.
+
 ## Overview
 
-Static code examples for [VitePress](https://vitepress.dev) using [Shiki Twoslash](https://github.com/shikijs/twoslash) — powered by the syntax engine of Visual Studio Code and the TypeScript compiler. Try moving your cursor into the code block below:
+Try moving your cursor into the code block below:
 
 ```ts twoslash
 // Removes 'readonly' attributes from a type's properties
@@ -30,12 +32,12 @@ Pretty neat, right? To some extent, anything your editor can show you about code
 // @noErrors
 import { defineConfig } from 'vitepress'
 export default defineConfig({
-  ti,
+  ti
   //^|
 })
 ```
 
-The name Twoslash refers to specially formatted comments (e.g. `// ^?`) which can be used to set up your environment, like compiler flags or separate input files. It couldn't be easier to set up and use!
+The name Twoslash refers to specially formatted comments (e.g. `// ^?`) which can be used to set up your environment, like compiler flags or separate input files. It couldn't be easier to set up and start creating incredible code examples!
 
 ## Install
 
@@ -82,6 +84,10 @@ import 'vitepress-plugin-shiki-twoslash/styles.css'
 
 export default defaultTheme
 ```
+
+::: tip
+You can [configure VitePress Twoslash](/config) using the `twoslash` property added to `defineConfig`:
+:::
 
 ## Add Twoslash
 

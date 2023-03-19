@@ -6,7 +6,7 @@ title: 'Markdown Extensions'
 
 ## Code Groups
 
-[Code Groups](https://vitepress.dev/guide/markdown#code-groups) and Twoslash [Imports](/api/imports)
+[Code Groups](https://vitepress.dev/guide/markdown#code-groups) and Twoslash [multi-file](/api/multi-file) support.
 
 ::: code-group
 
