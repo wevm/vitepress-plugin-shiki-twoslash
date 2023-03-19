@@ -59,8 +59,9 @@
   "ignorePatterns": [
     "CHANGELOG.md",
     "build",
-    "coverage",
     "dist",
+    "docs/index.md",
+    "docs/api/completions.md",
     "node_modules"
   ],
   "settings": {

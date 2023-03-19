@@ -88,6 +88,7 @@ pre .popover {
   margin-bottom: 10px;
   background-color: var(--vp-c-mute-dark);
   display: inline-block;
+  line-height: inherit;
   padding: 0 0.5rem 0.3rem;
   margin-top: 8px;
   border-radius: 3px;

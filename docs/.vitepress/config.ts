@@ -72,41 +72,49 @@ export default withTwoslash(
                 link: '/guide/markdown-extensions',
               },
               {
-                text: 'Using a Custom Theme',
+                text: 'Using a Custom Theme 🚧',
                 link: '/guide/custom-theme',
               },
             ],
           },
           {
-            text: 'API',
+            text: 'Features',
             items: [
               {
                 text: 'Queries',
                 link: '/api/queries',
               },
               {
-                text: 'Imports',
-                link: '/api/imports',
-              },
-              {
-                text: 'Cut',
-                link: '/api/cut',
-              },
-              {
-                text: 'Completions',
-                link: '/api/completions',
-              },
-              {
                 text: 'Errors',
                 link: '/api/errors',
               },
               {
-                text: 'Logging',
-                link: '/api/logging',
+                text: 'Emit',
+                link: '/api/emit',
               },
               {
-                text: 'Annotations',
+                text: 'Cutting',
+                link: '/api/cutting',
+              },
+              {
+                text: 'Multi-file',
+                link: '/api/multi-file',
+              },
+              {
+                text: 'DRY Examples 🚧',
+                link: '/api/dry',
+              },
+              {
+                text: '@types 🚧',
+                link: '/api/types',
+              },
+              {
+                text: 'Meta Annotations 🚧',
                 link: '/api/annotations',
+              },
+              {
+                text: 'Logging 🚧',
+                link: '/api/logging',
               },
             ],
           },
@@ -114,7 +122,7 @@ export default withTwoslash(
             text: 'Config',
             items: [
               {
-                text: 'Reference',
+                text: 'Reference 🚧',
                 link: '/config',
               },
             ],

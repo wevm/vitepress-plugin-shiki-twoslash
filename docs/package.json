@@ -7,6 +7,8 @@
     "serve": "vitepress serve"
   },
   "devDependencies": {
+    "@types/react": "^18.0.28",
+    "react": "^18.2.0",
     "vitepress": "1.0.0-alpha.48",
     "vitepress-plugin-shiki-twoslash": "workspace:*",
     "vue": "^3.2.47"

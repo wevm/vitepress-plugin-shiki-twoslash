@@ -1,30 +1,56 @@
 ---
-description: ''
+description: 'One of the key features of Twoslash is the ability to use the TypeScript compiler to pull out type information about your code.'
 title: 'Queries'
 ---
 
 # Queries
 
-Highlight types without user interaction.
+One of the key features of Twoslash is the ability to use the TypeScript compiler to pull out type information about your code. Twoslash comes with two different ways to query your code: `?^` and `?|`.
 
-```ts twoslash
-const foo = 'bar'
+## Extract Type `^?`
+
+Using `^?` you can pull out type information about a particular identifier in the line of code above it.
+
+::: code-group
+
+```ts twoslash [output]
+const hi = 'Hello'
+const msg = hi + ', world'
 //    ^?
 ```
 
-## Example
-
-Add a `// ^?` comment pointing to where you want to query.
-
-````md
+````md [markdown]
 ```ts twoslash
-const foo = 'bar'
+const hi = 'Hello'
+const msg = hi + ', world'
 //    ^?
 ```
 ````
 
-::: tip
+:::
 
-You might need to add whitespace between `//` and `^?` to point to where you want.
+## Completions `^|`
 
+Using `^|` you can pull out information about a what the auto-complete looks like at a particular location.
+
+::: code-group
+
+```ts twoslash [output]
+// @noErrors
+console.e
+//       ^|
+```
+
+````md [markdown]
+```ts twoslash
+// @noErrors
+console.e
+//       ^|
+```
+````
+
+:::
+
+::: info
+Note that the compiler flag for [`// @noErrors`](/api/errors#noerrors) is set, because `console.e` is a failing TypeScript code sample but we don't really care about that.
 :::
