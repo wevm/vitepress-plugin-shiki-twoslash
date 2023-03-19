@@ -5,12 +5,12 @@ overrides:
   shiki-twoslash>shiki: ^0.14.1
 
 patchedDependencies:
-  shiki-twoslash@3.1.1:
-    hash: unhypdhntfexmzdfbjbs24i4aa
-    path: patches/shiki-twoslash@3.1.1.patch
   vitepress@1.0.0-alpha.48:
     hash: nu7rq2bnncjflbygtoyal57gza
     path: patches/vitepress@1.0.0-alpha.48.patch
+  shiki-twoslash@3.1.1:
+    hash: unhypdhntfexmzdfbjbs24i4aa
+    path: patches/shiki-twoslash@3.1.1.patch
 
 importers:
 
@@ -35,8 +35,6 @@ importers:
       lint-staged: ^12.4.1
       prettier: ^2.8.1
       remark-shiki-twoslash: ^3.1.1
-      shiki: ~0.14.1
-      shiki-twoslash: ^3.1.1
       simple-git-hooks: ^2.8.1
       typescript: ^4.9.4
       vite: ^4.2.0
@@ -46,8 +44,6 @@ importers:
       vitest: ^0.29.3
     dependencies:
       remark-shiki-twoslash: 3.1.1_typescript@4.9.4
-      shiki: 0.14.1
-      shiki-twoslash: 3.1.1_unhypdhntfexmzdfbjbs24i4aa_typescript@4.9.4
     devDependencies:
       '@changesets/changelog-github': 0.4.8
       '@changesets/cli': 2.26.0

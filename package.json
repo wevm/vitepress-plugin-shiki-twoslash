@@ -35,9 +35,7 @@
     "vitepress": ">=1.0.0-alpha.61"
   },
   "dependencies": {
-    "remark-shiki-twoslash": "^3.1.1",
-    "shiki": "~0.14.1",
-    "shiki-twoslash": "^3.1.1"
+    "remark-shiki-twoslash": "^3.1.1"
   },
   "devDependencies": {
     "@changesets/changelog-github": "^0.4.8",

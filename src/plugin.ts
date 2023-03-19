@@ -1,10 +1,15 @@
-import { setupForFile, transformAttributesToHTML } from 'remark-shiki-twoslash'
-import type { UserConfigSettings } from 'shiki-twoslash'
+import type { transformAttributesToHTML } from 'remark-shiki-twoslash'
 import type { DefaultTheme, UserConfig } from 'vitepress'
 
-export type TwoslashConfigSettings = Prettify<UserConfigSettings>
+export type TwoslashConfigSettings = Prettify<
+  Parameters<typeof transformAttributesToHTML>[3]
+>
 
 export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
+  const { setupForFile, transformAttributesToHTML } = await import(
+    'remark-shiki-twoslash'
+  )
+
   // Inject twoslash highlighter
   if (!config.markdown) config.markdown = {}
   const markdownConfig = config.markdown.config || (() => null)

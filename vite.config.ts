@@ -25,7 +25,6 @@ export default defineConfig({
       external: ['shiki', 'vitepress'],
       output: {
         globals: {
-          shiki: 'shiki',
           vue: 'Vue',
         },
       },
