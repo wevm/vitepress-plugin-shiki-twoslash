@@ -11,6 +11,33 @@ Code blocks structurally look like:
   </pre> 
 */
 
+:root {
+  --vp-twoslash-c-annotation-fg: var(--vp-c-text-1);
+
+  --vp-twoslash-c-brand: var(--vp-c-brand);
+
+  --vp-twoslash-c-error-bg: var(--vp-c-red-dimm-2);
+  --vp-twoslash-c-error-fg: var(--vp-c-text-1);
+
+  --vp-twoslash-c-logger-error-bg: var(--vp-c-red-dimm-2);
+  --vp-twoslash-c-logger-error-fg: var(--vp-c-red-dark);
+  --vp-twoslash-c-logger-fg: var(--vp-c-text-1);
+  --vp-twoslash-c-logger-log-bg: var(--vp-c-mute-dark);
+  --vp-twoslash-c-logger-log-fg: var(--vp-c-gray);
+  --vp-twoslash-c-logger-warn-bg: var(--vp-c-yellow-dimm-2);
+  --vp-twoslash-c-logger-warn-fg: var(--vp-c-yellow-dark);
+
+  --vp-twoslash-c-lsp-bg: var(--vp-c-bg-elv);
+  --vp-twoslash-c-lsp-border: var(--vp-c-divider);
+  --vp-twoslash-c-lsp-fg: var(--vp-c-text-1);
+  --vp-twoslash-c-lsp-underline: var(--vp-c-text-2) ;
+  --vp-twoslash-lsp-shadow: var(--vp-shadow-2);
+
+  --vp-twoslash-c-query-bg: var(--vp-c-mute-darker);
+  --vp-twoslash-c-query-fg-2: var(--vp-c-text-2);
+  --vp-twoslash-c-query-fg: var(--vp-c-text-1);
+}
+
 /* Disable inline styles */
 pre.shiki.twoslash {
   background-color: unset !important;
@@ -53,11 +80,11 @@ pre .error, pre .error-behind {
 }
 pre .error {
   position: absolute;
-  background-color: var(--vp-c-red-dimm-2);
+  background-color: var(--vp-twoslash-c-error-bg);
   /* Give the space to the error code */
   display: flex;
   align-items: center;
-  color: var(--vp-c-text-1);
+  color: var(--vp-twoslash-c-error-fg);
 }
 pre .error .code {
   display: none;
@@ -71,22 +98,22 @@ pre .error-behind {
 /* Queries */
 pre .arrow {
   /* Transparent background */
-  background-color: var(--vp-c-mute-dark);
+  background-color: var(--vp-twoslash-c-query-bg);
   position: relative;
   top: -6px;
   margin-left: 0.1rem;
   /* Edges */
-  border-left: 1px solid var(--vp-c-mute-dark);
-  border-top: 1px solid var(--vp-c-mute-dark);
+  border-left: 1px solid var(--vp-twoslash-c-query-bg);
+  border-top: 1px solid var(--vp-twoslash-c-query-bg);
   transform: translateY(25%) rotate(45deg);
   /* Size */
   height: 8px;
   width: 8px;
 }
 pre .popover {
-  color: var(--vp-c-text-1);
+  color: var(--vp-twoslash-c-query-fg);
   margin-bottom: 10px;
-  background-color: var(--vp-c-mute-dark);
+  background-color: var(--vp-twoslash-c-query-bg);
   display: inline-block;
   line-height: inherit;
   padding: 0 0.5rem 0.3rem;
@@ -98,7 +125,7 @@ pre .popover {
 
 /** When you mouse over the pre, show the underlines */
 pre.twoslash:hover data-lsp {
-  border-color: var(--vp-c-text-2);
+  border-color: var(--vp-twoslash-c-lsp-underline);
 }
 
 /** The tooltip-like which provides the LSP response */
@@ -107,10 +134,10 @@ pre.twoslash data-lsp:hover::before {
   position: absolute;
   transform: translate(0, 1.15rem);
 
-  color: var(--vp-c-text-1);
-  background-color: var(--vp-c-bg-elv);
-  border: 1px solid var(--vp-c-divider);
-  box-shadow: var(--vp-shadow-2);
+  color: var(--vp-twoslash-c-lsp-fg);
+  background-color: var(--vp-twoslash-c-lsp-bg);
+  border: 1px solid var(--vp-twoslash-c-lsp-border);
+  box-shadow: var(--vp-twoslash-lsp-shadow);
   text-align: left;
   padding: 5px 8px;
   border-radius: 3px;
@@ -173,16 +200,16 @@ pre .inline-completions ul.dropdown {
   display: inline-block;
   position: absolute;
   width: 240px;
-  background-color: var(--vp-c-mute-dark);
-  color: var(--vp-c-text-2);
+  background-color: var(--vp-twoslash-c-query-bg);
+  color: var(--vp-twoslash-c-query-fg-2);
   padding-top: 4px;
   font-family: var(--code-font);
   margin: 0;
   padding: 0;
-  border-left: 4px solid var(--vp-c-mute-dark);
+  border-left: 4px solid var(--vp-twoslash-c-query-bg);
 }
 pre .inline-completions ul.dropdown::before {
-  background-color: var(--vp-c-text-1);
+  background-color: var(--vp-twoslash-c-query-fg);
   width: 2px;
   position: absolute;
   top: -1.2rem;
@@ -199,12 +226,12 @@ pre .inline-completions ul.dropdown li.deprecated {
   text-decoration: line-through;
 }
 pre .inline-completions ul.dropdown li span.result-found {
-  color: var(--vp-c-text-1);
+  color: var(--vp-twoslash-c-query-fg);
   font-weight: bold;
 }
 pre .inline-completions ul.dropdown li span.result {
   width: 100px;
-  color: var(--vp-c-text-2);
+  color: var(--vp-twoslash-c-query-fg-2);
   display: inline-block;
 }
 
@@ -222,7 +249,7 @@ div[class*="language-"] pre:not(.shiki) {
 pre .logger {
 	display: flex;
 	align-items: center;
-  color: var(--vp-c-text-1);
+  color: var(--vp-twoslash-c-logger-fg);
 	padding: 6px;
 	padding-left: 8px;
 	width: 100%;
@@ -232,25 +259,25 @@ pre .logger svg {
 	margin-right: 9px;
 }
 pre .logger.error-log {
-	background-color: var(--vp-c-red-dimm-2);
+	background-color: var(--vp-twoslash-c-logger-error-bg);
 }
 pre .logger.error-log svg path {
-  fill: var(--vp-c-red-dark);
-  stroke: var(--vp-c-red-dark);
+  fill: var(--vp-twoslash-c-logger-error-fg);
+  stroke: var(--vp-twoslash-c-logger-error-fg);
 }
 pre .logger.warn-log {
-	background-color: var(--vp-c-yellow-dimm-2);
+	background-color: var(--vp-twoslash-c-logger-warn-bg);
 }
 pre .logger.warn-log svg path {
-  fill: var(--vp-c-yellow-dark);
-  stroke: var(--vp-c-yellow-dark);
+  fill: var(--vp-twoslash-c-logger-warn-fg);
+  stroke: var(--vp-twoslash-c-logger-warn-fg);
 }
 pre .logger.log-log {
-  background-color: var(--vp-c-mute-dark);
+  background-color: var(--vp-twoslash-c-logger-log-bg);
 }
 pre .logger.log-log svg path, pre .logger.log-log svg line {
-  fill: var(--vp-c-gray);
-  stroke: var(--vp-c-gray);
+  fill: var(--vp-twoslash-c-logger-log-fg);
+  stroke: var(--vp-twoslash-c-logger-log-fg);
 }
 pre .logger.log-log svg {
 	margin-left: 6px;
@@ -266,7 +293,7 @@ pre .logger.log-log svg {
 	right: -10px;
    /** Default annotation text to 200px */
 	width: 200px;
-	color: var(--vp-c-brand);
+	color: var(--vp-twoslash-c-brand);
   z-index: 100;
 }
 .tag-container .twoslash-annotation p {
@@ -287,7 +314,7 @@ pre .logger.log-log svg {
 	margin-right: -5px;
 }
 .tag-container .twoslash-annotation svg path {
-  stroke: var(--vp-c-text-1);
+  stroke: var(--vp-twoslash-c-annotation-fg);
 }
 
 /* Other */

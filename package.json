@@ -92,10 +92,10 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
+    "*.{js,ts}": [
       "pnpm lint:fix"
     ],
-    "*.{json,md,mdx,yml}": [
+    "*.{json,md,yml}": [
       "pnpm lint:format"
     ]
   },

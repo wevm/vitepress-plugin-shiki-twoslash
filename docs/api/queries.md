@@ -31,6 +31,10 @@ const msg = hi + ', world'
 
 ## Completions `^|`
 
+::: warning
+Until this [pull request](https://github.com/shikijs/twoslash/pull/179) is released as part of `shiki-twoslash`, you must add [this patch](https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash/blob/main/patches/shiki-twoslash%403.1.1.patch) for completions to work.
+:::
+
 Using `^|` you can pull out information about a what the auto-complete looks like at a particular location.
 
 ::: code-group

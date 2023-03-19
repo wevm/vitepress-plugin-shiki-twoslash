@@ -16,6 +16,14 @@ export default withTwoslash(
           content: 'vitepress, plugin, shiki, twoslash',
         },
       ],
+      [
+        'script',
+        {
+          src: 'https://cdn.usefathom.com/script.js',
+          ['data-site']: 'ZFZJODZD',
+          defer: '',
+        },
+      ],
     ],
     lang: 'en-US',
     lastUpdated: true,
@@ -27,9 +35,9 @@ export default withTwoslash(
     },
     themeConfig: {
       // algolia: {
-      //   appId: '4QMG0RYQG7',
-      //   apiKey: 'd2114bafbf2a7fb3c9c2a856d4bc9e38',
-      //   indexName: 'abitype',
+      //   appId: '',
+      //   apiKey: '',
+      //   indexName: 'vitepress-twoslash',
       // },
       editLink: {
         pattern:
@@ -72,7 +80,7 @@ export default withTwoslash(
                 link: '/guide/markdown-extensions',
               },
               {
-                text: 'Using a Custom Theme 🚧',
+                text: 'Using a Custom Theme',
                 link: '/guide/custom-theme',
               },
             ],
@@ -118,8 +126,12 @@ export default withTwoslash(
             text: 'Config',
             items: [
               {
-                text: 'Reference 🚧',
-                link: '/config',
+                text: 'Reference',
+                link: '/config/reference',
+              },
+              {
+                text: 'Compiler Flags',
+                link: '/config/flags',
               },
             ],
           },

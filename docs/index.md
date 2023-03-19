@@ -31,6 +31,7 @@ Pretty neat, right? To some extent, anything your editor can show you about code
 ```ts twoslash
 // @noErrors
 import { defineConfig } from 'vitepress'
+
 export default defineConfig({
   ti
   //^|
@@ -44,7 +45,6 @@ The name Twoslash refers to specially formatted comments (e.g. `// ^?`) which ca
 Install `vitepress-plugin-shiki-twoslash` (requires `vitepress@>=1.0.0-alpha.61`).
 
 ::: code-group
-
 ```bash [pnpm]
 pnpm add vitepress-plugin-shiki-twoslash
 ```
@@ -56,7 +56,23 @@ npm i vitepress-plugin-shiki-twoslash
 ```bash [yarn]
 yarn add vitepress-plugin-shiki-twoslash
 ```
+:::
 
+::: warning
+Until `shiki-twoslash` uses the same version of `shiki` as VitePress, you must override the following packages' `shiki` versions for syntax highlighting to look the same.
+
+```json
+{
+  "pnpm": {
+    "overrides": {
+      "remark-shiki-twoslash>shiki": "^0.14.1",
+      "shiki-twoslash>shiki": "^0.14.1"
+    }
+  }
+}
+```
+
+Tracked in an upstream issue: https://github.com/shikijs/twoslash/issues/180
 :::
 
 ## Configure
@@ -86,7 +102,7 @@ export default defaultTheme
 ```
 
 ::: tip
-You can [configure VitePress Twoslash](/config) using the `twoslash` property added to `defineConfig`:
+You can [configure VitePress Twoslash](/config/reference) using the `twoslash` property added to `defineConfig`:
 :::
 
 ## Add Twoslash

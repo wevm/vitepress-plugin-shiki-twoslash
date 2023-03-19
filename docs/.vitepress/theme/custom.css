@@ -28,6 +28,34 @@ html.dark pre.shiki[class*="light"] {
   display: none;
 }
 
+/* VitePress Twoslash */
+:root {
+  --vp-twoslash-c-annotation-fg: var(--vp-c-text-1);
+
+  --vp-twoslash-c-brand: var(--vp-c-brand);
+
+  --vp-twoslash-c-error-bg: var(--vp-c-red-dimm-2);
+  --vp-twoslash-c-error-fg: var(--vp-c-text-1);
+
+  --vp-twoslash-c-logger-error-bg: var(--vp-c-red-dimm-2);
+  --vp-twoslash-c-logger-error-fg: var(--vp-c-red-dark);
+  --vp-twoslash-c-logger-fg: var(--vp-c-text-1);
+  --vp-twoslash-c-logger-log-bg: var(--vp-c-mute-dark);
+  --vp-twoslash-c-logger-log-fg: var(--vp-c-gray);
+  --vp-twoslash-c-logger-warn-bg: var(--vp-c-yellow-dimm-2);
+  --vp-twoslash-c-logger-warn-fg: var(--vp-c-yellow-dark);
+
+  --vp-twoslash-c-lsp-bg: var(--vp-c-bg-elv);
+  --vp-twoslash-c-lsp-border: var(--vp-c-divider);
+  --vp-twoslash-c-lsp-fg: var(--vp-c-text-1);
+  --vp-twoslash-c-lsp-underline: var(--vp-c-text-2);
+  --vp-twoslash-lsp-shadow: var(--vp-shadow-2);
+
+  --vp-twoslash-c-query-bg: var(--vp-c-mute-dark);
+  --vp-twoslash-c-query-fg-2: var(--vp-c-text-2);
+  --vp-twoslash-c-query-fg: var(--vp-c-text-1);
+}
+
 /* Fix tab color */
 .vp-code-group .tabs label {
   background-color: transparent;
