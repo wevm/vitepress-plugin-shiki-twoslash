@@ -120,7 +120,7 @@ pre .popover {
   margin-top: 8px;
   border-radius: 3px;
   max-width: 400px;
-  white-space: pre-line;
+  white-space: pre-wrap;
 }
 
 /** When you mouse over the pre, show the underlines */
