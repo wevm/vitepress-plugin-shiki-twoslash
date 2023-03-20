@@ -15,7 +15,7 @@
       "url": "https://github.com/sponsors/wagmi-dev"
     }
   ],
-  "main": "dist/vitepress-plugin-shiki-twoslash.umd.js",
+  "main": "dist/vitepress-plugin-shiki-twoslash.cjs.js",
   "module": "dist/vitepress-plugin-shiki-twoslash.es.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/vitepress-plugin-shiki-twoslash.es.mjs",
-      "require": "./dist/vitepress-plugin-shiki-twoslash.umd.js"
+      "require": "./dist/vitepress-plugin-shiki-twoslash.cjs.js"
     },
     "./styles.css": "./dist/styles.css",
     "./package.json": "./package.json"
@@ -35,7 +35,6 @@
     "vitepress": ">=1.0.0-alpha.61"
   },
   "dependencies": {
-    "@typescript/twoslash": "^3.2.1",
     "remark-shiki-twoslash": "^3.1.1"
   },
   "devDependencies": {

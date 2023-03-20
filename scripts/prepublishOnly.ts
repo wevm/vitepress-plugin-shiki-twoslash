@@ -24,6 +24,7 @@ import path from 'path'
       exports: tmpPackageJson.exports,
       files: tmpPackageJson.files,
       sideEffects: tmpPackageJson.sideEffects,
+      dependencies: tmpPackageJson.dependencies,
       peerDependencies: tmpPackageJson.peerDependencies,
       keywords: tmpPackageJson.keywords,
     },

@@ -39,7 +39,12 @@ export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
           code.replace(/\r?\n$/, ''), // strip trailing newline fed during code block parsing
           [lang, attrs].join(' '),
           highlighters,
-          twoslashConfig,
+          {
+            ...twoslashConfig,
+            addTryButton: /noplayground/.test(attrs)
+              ? undefined
+              : twoslashConfig.addTryButton,
+          },
         )
 
       return h!(code, lang, attrs)

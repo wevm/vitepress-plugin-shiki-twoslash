@@ -17,12 +17,12 @@ export default defineConfig({
             return `${name}.${format}.js`
         }
       },
-      formats: ['es', 'umd'],
+      formats: ['es', 'cjs'],
       name,
     },
     outDir: 'dist',
     rollupOptions: {
-      external: ['shiki', 'vitepress'],
+      external: ['remark-shiki-twoslash', 'vitepress'],
       output: {
         globals: {
           vue: 'Vue',
