@@ -1,5 +1,11 @@
 # vitepress-plugin-shiki-twoslash
 
+## 0.0.3
+
+### Patch Changes
+
+- [`d3f646a`](https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash/commit/d3f646a95daa06c5c713da895e5b138749568849) Thanks [@tmm](https://github.com/tmm)! - Added `@typescript/twoslash` to deps.
+
 ## 0.0.2
 
 ### Patch Changes
