@@ -1,5 +1,11 @@
 # vitepress-plugin-shiki-twoslash
 
+## 0.0.4
+
+### Patch Changes
+
+- [`77f40fa`](https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash/commit/77f40fa1b48cb02d269719255f059ce2953eb764) Thanks [@tmm](https://github.com/tmm)! - Marked external deps.
+
 ## 0.0.3
 
 ### Patch Changes
