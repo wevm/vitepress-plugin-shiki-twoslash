@@ -8,9 +8,6 @@ patchedDependencies:
   shiki-twoslash@3.1.1:
     hash: unhypdhntfexmzdfbjbs24i4aa
     path: patches/shiki-twoslash@3.1.1.patch
-  vitepress@1.0.0-alpha.48:
-    hash: nu7rq2bnncjflbygtoyal57gza
-    path: patches/vitepress@1.0.0-alpha.48.patch
 
 importers:
 
