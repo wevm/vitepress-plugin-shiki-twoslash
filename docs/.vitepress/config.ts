@@ -41,7 +41,7 @@ export default withTwoslash(
       // },
       editLink: {
         pattern:
-          'https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash/edit/main/site/:path',
+          'https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash/edit/main/docs/:path',
         text: 'Suggest changes to this page',
       },
       footer: {
