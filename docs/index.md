@@ -102,7 +102,7 @@ export default defaultTheme
 ```
 
 ::: tip
-You can [configure VitePress Twoslash](/config/reference) using the `twoslash` property added to `defineConfig`:
+You can [configure VitePress Twoslash](/config/reference) using the `twoslash` property added to `defineConfig`.
 :::
 
 ## Add Twoslash
