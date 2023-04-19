@@ -34,7 +34,7 @@ export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
   config.markdown.config = (md) => {
     const h = md.options.highlight
     md.options.highlight = (code, lang, attrs) => {
-      if (/twoslash/.test(attrs))
+      if (lang === 'twoslash' || /twoslash/.test(attrs))
         return transformAttributesToHTML(
           code.replace(/\r?\n$/, ''), // strip trailing newline fed during code block parsing
           [lang, attrs].join(' '),

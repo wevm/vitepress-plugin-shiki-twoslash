@@ -120,6 +120,10 @@ export default withTwoslash(
                 text: 'Logging',
                 link: '/api/logging',
               },
+              {
+                text: 'Includes',
+                link: '/api/includes',
+              },
             ],
           },
           {
