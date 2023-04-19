@@ -22,7 +22,7 @@ type SomeString = string
 Shiki Twoslash also provide the ability to define incremental steps through the definition of re-usable blocks. This means whenever a new step is delimited down the code, it will also include previous steps. These are **not groups**.
 
 - Incremental steps are delimited by `// - [name of the step]`
-- They are are named **at the end** of the actual code
+- They are named **at the end** of the actual code
 
 ````md
 ```twoslash include myBlockWithSteps
