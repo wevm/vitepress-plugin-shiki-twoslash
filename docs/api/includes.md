@@ -1,5 +1,5 @@
 ---
-description: 'Include hidden TypeScript parts in your code examples.'
+description: 'Include re-usable TypeScript blocks in your code examples.'
 title: 'Includes'
 ---
 
