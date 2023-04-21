@@ -34,8 +34,9 @@ export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
   config.markdown.config = (md) => {
     const h = md.options.highlight
     md.options.highlight = (code, lang, attrs) => {
-      if (lang === 'twoslash' || /twoslash/.test(attrs))
-        return transformAttributesToHTML(
+      const isReusableBlock = lang === 'twoslash'
+      if (isReusableBlock || /twoslash/.test(attrs)) {
+        const output = transformAttributesToHTML(
           code.replace(/\r?\n$/, ''), // strip trailing newline fed during code block parsing
           [lang, attrs].join(' '),
           highlighters,
@@ -46,6 +47,9 @@ export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
               : twoslashConfig.addTryButton,
           },
         )
+
+        return isReusableBlock ? '<pre />' : output
+      }
 
       return h!(code, lang, attrs)
     }

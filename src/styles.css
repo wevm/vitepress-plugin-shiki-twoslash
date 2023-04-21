@@ -63,7 +63,10 @@ pre.shiki .language-id {
   display: none;
 }
 
-/** Hide twoslash includes' definition code-blocks. */
+/*
+ * Hide twoslash's re-usable code-blocks.
+ * @TODO: we should find a way of getting rid of the whole codeblock markup (#10)
+ */
 .language-twoslash {
   display: none;
 }
