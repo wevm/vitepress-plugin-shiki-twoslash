@@ -1,5 +1,11 @@
 # vitepress-plugin-shiki-twoslash
 
+## 0.0.5
+
+### Patch Changes
+
+- [#10](https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash/pull/10) [`810df6a`](https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash/commit/810df6a364f0304c6cbb38e49a5ece519915b6e9) Thanks [@Dschungelabenteuer](https://github.com/Dschungelabenteuer)! - Added support for Shiki Twoslash's [includes system](https://github.com/shikijs/twoslash/blob/main/site/components/docs/DRY.mdx)
+
 ## 0.0.4
 
 ### Patch Changes
