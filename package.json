@@ -2,7 +2,7 @@
   "name": "vitepress-plugin-shiki-twoslash",
   "description": "VitePress Plugin for Shiki Twoslash",
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": {
     "type": "git",
     "url": "https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash.git"

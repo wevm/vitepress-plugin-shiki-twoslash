@@ -1,5 +1,11 @@
 # vitepress-plugin-shiki-twoslash
 
+## 0.0.6
+
+### Patch Changes
+
+- [#12](https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash/pull/12) [`9a98546`](https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash/commit/9a98546dbe19c2262ec9590448a3791c86b1ffe6) Thanks [@tmm](https://github.com/tmm)! - Bumped Shiki Twoslash
+
 ## 0.0.5
 
 ### Patch Changes
