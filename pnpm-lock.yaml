@@ -4,11 +4,6 @@ overrides:
   remark-shiki-twoslash>shiki: ^0.14.1
   shiki-twoslash>shiki: ^0.14.1
 
-patchedDependencies:
-  shiki-twoslash@3.1.1:
-    hash: unhypdhntfexmzdfbjbs24i4aa
-    path: patches/shiki-twoslash@3.1.1.patch
-
 importers:
 
   .:
@@ -31,7 +26,7 @@ importers:
       fs-extra: ^11.1.0
       lint-staged: ^12.4.1
       prettier: ^2.8.1
-      remark-shiki-twoslash: ^3.1.1
+      remark-shiki-twoslash: ^3.1.3
       simple-git-hooks: ^2.8.1
       typescript: ^4.9.4
       vite: ^4.2.0
@@ -40,7 +35,7 @@ importers:
       vitepress: 1.0.0-alpha.61
       vitest: ^0.29.3
     dependencies:
-      remark-shiki-twoslash: 3.1.1_typescript@4.9.4
+      remark-shiki-twoslash: 3.1.3_typescript@4.9.4
     devDependencies:
       '@changesets/changelog-github': 0.4.8
       '@changesets/cli': 2.26.0
@@ -3646,8 +3641,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /remark-shiki-twoslash/3.1.1_typescript@4.9.4:
-    resolution: {integrity: sha512-9TKX1mlXT/TGASQVk6+Xt0puKiyWZvYQ5LKcpSAocxhKMbJ19M0a6VCrDYw0IK9w1tiqofDihMXQ6wETnA7awQ==}
+  /remark-shiki-twoslash/3.1.3_typescript@4.9.4:
+    resolution: {integrity: sha512-4e8OH3ySOCw5wUbDcPszokOKjKuebOqlP2WlySvC7ITBOq27BiGsFlq+FNWhxppZ+JzhTWah4gQrnMjX3KDbAQ==}
     peerDependencies:
       typescript: '>3'
     dependencies:
@@ -3657,7 +3652,7 @@ packages:
       fenceparser: 1.1.1
       regenerator-runtime: 0.13.11
       shiki: 0.14.1
-      shiki-twoslash: 3.1.1_unhypdhntfexmzdfbjbs24i4aa_typescript@4.9.4
+      shiki-twoslash: 3.1.2_typescript@4.9.4
       tslib: 2.1.0
       typescript: 4.9.4
       unist-util-visit: 2.0.3
@@ -3797,8 +3792,8 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /shiki-twoslash/3.1.1_unhypdhntfexmzdfbjbs24i4aa_typescript@4.9.4:
-    resolution: {integrity: sha512-b2j/2yjEjnj0Yav7purKB7uuSbYBf/EQWmu2f7d4G96NiM+Qmr3Tb3UeHY7faN/IEaLW6ip7aQa7MpZNlU5xkQ==}
+  /shiki-twoslash/3.1.2_typescript@4.9.4:
+    resolution: {integrity: sha512-JBcRIIizi+exIA/OUhYkV6jtyeZco0ykCkIRd5sgwIt1Pm4pz+maoaRZpm6SkhPwvif4fCA7xOtJOykhpIV64Q==}
     peerDependencies:
       typescript: '>3'
     dependencies:
@@ -3810,7 +3805,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: false
-    patched: true
 
   /shiki/0.14.1:
     resolution: {integrity: sha512-+Jz4nBkCBe0mEDqo1eKRcCdjRtrCjozmcbTUjbPTX7OOJfEbTZzlUWlZtGe3Gb5oV1/jnojhG//YZc3rs9zSEw==}
