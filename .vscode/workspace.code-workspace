@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "name": "vitepress-plugin-shiki-twoslash",
+      "path": "../"
+    },
+    {
+      "name": "docs",
+      "path": "../docs"
+    }
+  ]
+}

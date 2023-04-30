@@ -18,7 +18,7 @@ export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
   let themes: TwoslashConfigSettings['themes'] = ['material-theme-palenight']
   if (config.twoslash?.themes) {
     themes = config.twoslash.themes
-  } else if (typeof theme == 'object') {
+  } else if (typeof theme === 'object') {
     if ('dark' in theme && 'light' in theme) themes = [theme.dark, theme.light]
     else themes = [theme]
   } else if (typeof theme === 'string') {

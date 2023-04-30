@@ -1,24 +1,31 @@
 {
   "name": "vitepress-plugin-shiki-twoslash",
   "description": "VitePress Plugin for Shiki Twoslash",
-  "license": "MIT",
   "version": "0.0.6",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wagmi-dev/vitepress-plugin-shiki-twoslash.git"
+  "scripts": {
+    "build": "vite build",
+    "changeset:release": "pnpm build && changeset publish",
+    "changeset:version": "changeset version && pnpm install --lockfile-only",
+    "dev": "vite build -w",
+    "docs:dev": "pnpm -r --filter docs dev",
+    "docs:build": "pnpm -r --filter docs build",
+    "docs:serve": "pnpm -r --filter docs serve",
+    "format": "rome format . --write",
+    "lint": "rome check .",
+    "lint:fix": "pnpm lint --apply",
+    "postinstall": "pnpm build",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "npx simple-git-hooks",
+    "prepublishOnly": "pnpm bun scripts/prepublishOnly.ts",
+    "typecheck": "tsc --noEmit"
   },
-  "author": "awkweb.eth",
-  "ethereum": "wagmi-dev.eth",
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/wagmi-dev"
-    }
-  ],
   "main": "dist/vitepress-plugin-shiki-twoslash.cjs.js",
   "module": "dist/vitepress-plugin-shiki-twoslash.es.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
+  "files": [
+    "/dist"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -28,9 +35,6 @@
     "./styles.css": "./dist/styles.css",
     "./package.json": "./package.json"
   },
-  "files": [
-    "/dist"
-  ],
   "peerDependencies": {
     "vitepress": ">=1.0.0-alpha.61"
   },
@@ -43,19 +47,11 @@
     "@types/eslint": "^8.4.10",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "17.0.21",
-    "@types/prettier": "^2.7.2",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "bun": "^0.5.7",
-    "eslint": "8.17.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-import-resolver-typescript": "^2.7.1",
-    "eslint-plugin-eslint-comments": "^3.2.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "fs-extra": "^11.1.0",
-    "lint-staged": "^12.4.1",
-    "prettier": "^2.8.1",
+    "rome": "^12.0.0",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^4.9.4",
     "vite": "^4.2.0",
@@ -64,40 +60,27 @@
     "vitepress": "1.0.0-alpha.61",
     "vitest": "^0.29.3"
   },
+  "license": "MIT",
+  "repository": "wagmi-dev/vitepress-plugin-shiki-twoslash",
+  "authors": [
+    "awkweb.eth"
+  ],
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/wagmi-dev"
+    }
+  ],
   "keywords": [
     "vitepress",
     "plugin",
     "shiki",
     "twoslash"
   ],
-  "scripts": {
-    "build": "vite build",
-    "changeset:release": "pnpm build && changeset publish",
-    "changeset:version": "changeset version && pnpm install --lockfile-only",
-    "dev": "vite build -w",
-    "docs:dev": "pnpm -r --filter docs dev",
-    "docs:build": "pnpm -r --filter docs build",
-    "docs:serve": "pnpm -r --filter docs serve",
-    "lint": "eslint . --cache",
-    "lint:fix": "pnpm lint --fix",
-    "lint:format": "prettier --write",
-    "postinstall": "pnpm build",
-    "prepare": "npx simple-git-hooks",
-    "prepublishOnly": "pnpm bun scripts/prepublishOnly.ts",
-    "typecheck": "tsc --noEmit"
-  },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged"
+    "pre-commit": "pnpm format && pnpm lint:fix"
   },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "pnpm lint:fix"
-    ],
-    "*.{json,md,yml}": [
-      "pnpm lint:format"
-    ]
-  },
-  "packageManager": "pnpm@7.5.0",
+  "packageManager": "pnpm@8.3.1",
   "pnpm": {
     "overrides": {
       "remark-shiki-twoslash>shiki": "^0.14.1",
@@ -108,8 +91,5 @@
         "@algolia/client-search"
       ]
     }
-  },
-  "engines": {
-    "pnpm": ">=7"
   }
 }
