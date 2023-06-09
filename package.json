@@ -23,9 +23,7 @@
   "module": "dist/vitepress-plugin-shiki-twoslash.es.mjs",
   "types": "dist/index.d.ts",
   "sideEffects": false,
-  "files": [
-    "/dist"
-  ],
+  "files": ["/dist"],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -57,26 +55,19 @@
     "vite": "^4.2.0",
     "vite-plugin-dts": "^2.1.0",
     "vite-plugin-static-copy": "^0.13.1",
-    "vitepress": "1.0.0-alpha.61",
+    "vitepress": "1.0.0-beta.1",
     "vitest": "^0.29.3"
   },
   "license": "MIT",
   "repository": "wagmi-dev/vitepress-plugin-shiki-twoslash",
-  "authors": [
-    "awkweb.eth"
-  ],
+  "authors": ["awkweb.eth"],
   "funding": [
     {
       "type": "github",
       "url": "https://github.com/sponsors/wagmi-dev"
     }
   ],
-  "keywords": [
-    "vitepress",
-    "plugin",
-    "shiki",
-    "twoslash"
-  ],
+  "keywords": ["vitepress", "plugin", "shiki", "twoslash"],
   "simple-git-hooks": {
     "pre-commit": "pnpm format && pnpm lint:fix"
   },
@@ -87,9 +78,7 @@
       "shiki-twoslash>shiki": "^0.14.1"
     },
     "peerDependencyRules": {
-      "ignoreMissing": [
-        "@algolia/client-search"
-      ]
+      "ignoreMissing": ["@algolia/client-search"]
     }
   }
 }
