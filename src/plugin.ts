@@ -5,7 +5,7 @@ export type TwoslashConfigSettings = Prettify<
   Parameters<typeof transformAttributesToHTML>[3]
 >
 
-export async function withTwoslash(config: UserConfig<DefaultTheme.Config>) {
+export async function withTwoslash<ThemeConfig = DefaultTheme.Config>(config: UserConfig<ThemeConfig>) {
   const { setupForFile, transformAttributesToHTML } = await import(
     'remark-shiki-twoslash'
   )
