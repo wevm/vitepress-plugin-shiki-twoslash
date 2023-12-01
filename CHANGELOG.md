@@ -1,5 +1,11 @@
 # vitepress-plugin-shiki-twoslash
 
+## 0.0.7
+
+### Patch Changes
+
+- [#15](https://github.com/wevm/vitepress-plugin-shiki-twoslash/pull/15) [`dd4e8aa`](https://github.com/wevm/vitepress-plugin-shiki-twoslash/commit/dd4e8aaee9b8d54741f87d57bac37b999c232f58) Thanks [@Dschungelabenteuer](https://github.com/Dschungelabenteuer)! - Added support for custom theme configurations
+
 ## 0.0.6
 
 ### Patch Changes
